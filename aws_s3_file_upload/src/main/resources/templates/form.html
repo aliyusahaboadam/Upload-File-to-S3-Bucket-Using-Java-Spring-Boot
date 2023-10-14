@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #FF5768;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #FF5768;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #FF5768;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff3f4e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration</h2>
+        
+        <div style="color: red"  th:if="${error != null}">
+              [[${error}]]
+        </div>
+        
+         <div style="color: red"  th:if="${message != null}">
+              [[${message}]]
+        </div>
+        
+        <form  
+        method="post"
+        action="file-upload"
+        enctype="multipart/form-data"
+        
+        >
+            
+            <input type="text" name="description" placeholder="Description" required>
+            <input type="file" name="file" required>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
